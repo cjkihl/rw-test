@@ -8,8 +8,13 @@
 [web]
   title = "Redwood App"
   port = 8910
-  apiUrl = "/.redwood/functions" # you can customise graphql and dbauth urls individually too: see https://redwoodjs.com/docs/app-configuration-redwood-toml#api-paths
-  includeEnvironmentVariables = [] # any ENV vars that should be available to the web side, see https://redwoodjs.com/docs/environment-variables#web
+  apiUrl = "https://m2cequsto2.execute-api.us-east-1.amazonaws.com"       # Set API_URL in production to the Serverless deploy endpoint of your api service, see https://redwoodjs.com/docs/deploy/serverless-deploy
+  includeEnvironmentVariables = [
+    "AUTH0_DOMAIN",
+    "AUTH0_CLIENT_ID",
+    "AUTH0_REDIRECT_URI",
+    "AUTH0_AUDIENCE",
+  ]
 [api]
   port = 8911
 [browser]
